@@ -1,0 +1,51 @@
+
+
+.vertical-scroll-section {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  /* overflow-x: hidden; */
+  
+}
+
+.vertical-slider-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.vertical-slider-box {
+  background: linear-gradient(to right, #283c86, #45a247);
+  color: white;
+  border-radius: 20px;
+  padding: 40px;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.7s ease-in-out;
+  margin-top: 30px;
+  
+}
+
+.vertical-slider-box.active {
+  top: 0;
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.vertical-slider-box.fade-out {
+  top: -100%;
+  opacity: 0;
+  transform: scale(0.9);
+  z-index: 1;
+}

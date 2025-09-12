@@ -1,0 +1,509 @@
+/* General Body Styling */
+body {
+    font-family: 'Times New Roman', Times, serif; /* Example font */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+Navbar Styling
+#mainNavbar {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    transition: background-color 0.3s ease-in-out;
+}
+
+#mainNavbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9); /* More opaque on scroll */
+}
+
+.navbar-brand .logo {
+    height: 40px; /* Adjust logo size */
+    width: auto;
+    filter: brightness(0) invert(1); /* Makes logo white if it's dark */
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important; /* White links */
+    font-weight: 400;
+    margin: 0 10px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff5722 !important; /* Orange on hover */
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ff5722;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: none;
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    color: #fff !important;
+    padding: 8px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #ff5722;
+    color: #fff !important;
+}
+
+
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    width: 100vw; 
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: white;
+    overflow: hidden;
+    /* REMOVE any background-image, background-size, background-position here */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Make it fill the parent width */
+    height: 100%; /* Make it fill the parent height */
+    z-index: 0; /* Send video to the back */
+    object-fit: cover; /* Ensures video covers the entire area, cropping if necessary */
+    pointer-events: none; /* Prevents interaction with video */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Adjust these gradients to simulate your desired glowing lines and darkness */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%),
+                radial-gradient(ellipse at center, transparent 0%, rgba(255, 87, 34, 0.2) 20%, transparent 60%); /* Orange glow effect */
+    background-blend-mode: overlay; /* Blend the gradients */
+    z-index: 1; /* Above the video, below content */
+    pointer-events: none; /* Prevents interaction with overlay */
+}
+
+
+
+.hero-text {
+    z-index: 2; 
+    position: relative; 
+}
+
+.hero-text h1 {
+    font-size: 4.5rem; 
+    font-weight: 700;
+    margin-bottom: -15px; 
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInSlideUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-text h2 {
+    font-size: 3.5rem; 
+    font-weight: 600;
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: fadeInSlideUp 1s ease-out forwards;
+    animation-delay: 0.7s;
+} 
+
+/* Service Cards Row */
+.service-cards-row {
+    position: absolute;
+    bottom: 50px; /* Adjust distance from bottom */
+    width: 100%;
+    left: 0;
+    z-index: 3; /* Ensure cards are above hero background/overlay */
+}
+
+.service1-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    border-radius: 15px;
+    padding: 20px 10px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 150px; /* Ensure consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.service1-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px) scale(1.05); /* Lift and slightly enlarge */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.service1-card img {
+    width:100%; /* Adjust icon size */
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.service1-card p {
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+/* Glowing lines/abstract background animation (if not part of image) */
+/* This is a placeholder for complex background animation if needed,
+   otherwise, rely on your background image. */
+@keyframes glowingLines {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Example: If you want to simulate the lines with CSS,
+   you'd need more complex gradients/multiple elements.
+   For now, assume background-image does the job. */
+
+
+/* Keyframe Animations */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    .hero-text h2 {
+        font-size: 2.8rem;
+    }
+    .service-cards-row {
+        bottom: 20px; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-text h1 {
+        font-size: 2.8rem;
+        margin-bottom: 5px;
+    }
+    .hero-text h2 {
+        font-size: 2.2rem;
+    }
+    .service-card {
+        padding: 15px 5px;
+        min-height: 120px;
+    }
+    .service-card img {
+        width: 50px;
+        height: 50px;
+    }
+    .service-card p {
+        font-size: 0.85rem;
+    }
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9); /* Darker background for mobile menu */
+    }
+    .navbar-nav {
+        padding: 10px 0;
+    }
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+}
+
+ .section-title {
+      font-family: 'Times New Roman', Times, serif;
+      /* background: url('wev.jpg') no-repeat center center fixed; */
+      background-size: cover;
+      color: lightcyan;
+      font-size: 3.5rem;
+      font-weight: bold;
+      text-align: center;
+      /* padding-top: 10px; */
+      /* margin-bottom: 10px; */
+      /* border-bottom: 2px solid #e3d1f3; */
+      display: inline-block;
+    }
+
+    .who-we-are {
+      padding: 60px 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .hero-title {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 4rem;
+      color: red;
+    }
+
+    .hero-img {
+      max-width: 100%;
+      height: auto;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+
+
+.section-title {
+      margin-bottom: 40px;
+      /* color: #c14444; */
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+      background-size: cover;
+      color: lightcyan;
+      font-size: 3.5rem;
+      font-weight: bold;
+      text-align: center;
+    }
+    .service-card {
+      background-size: cover;
+      background-position: center;
+      height: 280px;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+      margin-top:40px;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 1;
+    }
+    .service-card-content {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+
+    }
+    .service-card h5 {
+      color:aquamarine;
+      font-weight: 700;
+    }
+    .service-card img {
+      width: 70px;
+      height:100px;
+      margin-bottom: 15px;
+      
+    }
+    
+
+
+
+    .section-title {
+      text-align: center;
+      color: #a52a2a;
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      font-family: 'Times New Roman', Times, serif;
+
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 90%;
+      height: 400px;
+      perspective: 1000px;
+      margin-bottom: 40px;
+      margin-left: 20px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .flip-card-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .flip-card-back {
+      background: linear-gradient(to bottom, #000000, #444);
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    
+
+    
+
+
+ /* Container spacing */
+ #testimonialCarousel {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Card style for each testimonial */
+#testimonialCarousel .carousel-item {
+ background: #c25f86;
+background: radial-gradient(circle, rgba(194, 95, 134, 1) 0%, rgba(148, 187, 233, 1) 100%); 
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Name styling */
+#testimonialCarousel h5 {
+  font-weight: 600;
+  color:black;
+  margin-bottom: 10px;
+}
+
+/* Star styling */
+.stars {
+  color: #f0ba15; /* Bootstrap's warning color (gold) */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+/* Text styling */
+#testimonialCarousel p {
+  font-size: 1.05rem;
+  color:black;
+  line-height: 1.6;
+}
+
+/* Indicator dots */
+.carousel-indicators [data-bs-target] {
+  background-color: #6c757d;
+  width: 30px;
+  height: 6px;
+  border-radius: 3px;
+  margin: 5px;
+}
+
+.carousel-indicators .active {
+  background-color: #343a40;
+}
+
+/* Control arrows */
+.carousel-control-prev span,
+.carousel-control-next span {
+  font-size: 2rem;
+  color: #343a40;
+  font-weight: bold;
+}
+
+/* Optional: smoother transitions */
+.carousel-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+
+   
+footer ul li {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer p, footer li {
+  color: #ccc;
+}

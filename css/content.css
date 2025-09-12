@@ -1,0 +1,114 @@
+
+  
+    .case-section {
+      padding: 80px 0;
+      background-color: #0a0e23;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .case-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
+    }
+
+    .case-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .case-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transition: 0.4s ease-in-out;
+    }
+
+    .overlay {
+      position: absolute;
+      background: linear-gradient(to top, rgba(0, 63, 122, 0.9), rgba(0, 63, 122, 0.5));
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
+
+    .case-content {
+      position: relative;
+      z-index: 3;
+      padding: 30px;
+    }
+
+    .case-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 2px black;
+    }
+
+    .case-desc {
+      font-size: 1rem;
+      margin: 15px 0;
+      text-shadow: 1px 1px 1px black;
+    }
+
+    .read-more {
+      color: #ffc107;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+    .arrow-right {
+      font-size: 2rem;
+      color: #fff;
+      float: right;
+    }
+
+
+    .text-box {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80') center center/cover no-repeat;
+      border-radius: 20px;
+      padding: 20px;
+      color: white;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .text-box::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    .text-box-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .text-box h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 2px black;
+    }
+
+    .text-box p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }

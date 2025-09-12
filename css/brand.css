@@ -1,0 +1,20 @@
+.icons-row {
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.icon-box {
+  text-align: center;
+  transition: transform 0.3s;
+  font-size: 2.1rem;
+}
+.icon-box img {
+  width: 80px;
+  height: 80px;
+}
+.icon-box p {
+  margin-top: 8px;
+  font-weight: 500;
+}
+.icon-box:hover {
+  transform: scale(1.1);
+}
